@@ -1,0 +1,3 @@
+/Users/wadefortson/Desktop/OSFinal/cmake-build-debug/CMakeFiles/OSFinal.dir
+/Users/wadefortson/Desktop/OSFinal/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/wadefortson/Desktop/OSFinal/cmake-build-debug/CMakeFiles/rebuild_cache.dir
