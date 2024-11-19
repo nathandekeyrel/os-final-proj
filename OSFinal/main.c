@@ -8,10 +8,11 @@ typedef struct {
     int pid;            // Process ID
     int arrival_time;   // Arrival Time
     int burst_time;     // Burst Time
-    int completion_time;
+    int service_time;
     int waiting_time;
     int turnaround_time;
     int remaining_time;
+    int response_time;
 } Process;
 
 // Function prototypes
