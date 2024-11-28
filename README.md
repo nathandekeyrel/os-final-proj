@@ -33,3 +33,6 @@
 <ul>
   <li>(will put more in this readme later)</li>
 </ul>
+
+<p>There were two aspects of the project developed in python: Workload generation and metric visualization.</p>
+<p>Working with files and graphs are just easier in python.</p>
