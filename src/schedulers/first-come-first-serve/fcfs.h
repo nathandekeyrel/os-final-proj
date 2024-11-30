@@ -1,8 +1,8 @@
 #ifndef FCFS_H
 #define FCFS_H
 
-#include "queue.h"
-#include "process.h"
+#include "../../core/process.h"
+#include "../../core/queue.h"
 
 //======================================================
 // Scheduler Struct
