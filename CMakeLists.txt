@@ -22,4 +22,5 @@ add_executable(os_final_proj
         src/utils/rbtree.c
         src/utils/rbtree.h
         src/schedulers/first-come-first-serve/fcfs.c
-        src/schedulers/first-come-first-serve/fcfs.h)
+        src/schedulers/first-come-first-serve/fcfs.h
+        src/schedulers/scheduler.h)
