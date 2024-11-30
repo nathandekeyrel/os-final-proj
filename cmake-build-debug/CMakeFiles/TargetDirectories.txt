@@ -1,0 +1,3 @@
+/cygdrive/c/Users/nated/os-final-proj/cmake-build-debug/CMakeFiles/os_final_proj.dir
+/cygdrive/c/Users/nated/os-final-proj/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/nated/os-final-proj/cmake-build-debug/CMakeFiles/rebuild_cache.dir
