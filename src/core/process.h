@@ -32,14 +32,8 @@ typedef struct process {
     unsigned long first_run_time;
     unsigned long completion_time;
     unsigned long total_time;
-    unsigned long burst_time;
-    unsigned long remaining_time;
 
-    // i/o info
-    unsigned int io_frequency;
-    unsigned int io_duration;
-
-    // cfs specific
+    // cfs
     double vruntime;
     struct rb_node rb_node;
 
