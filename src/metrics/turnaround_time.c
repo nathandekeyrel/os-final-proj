@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "queue.h"
-#include "process.h"
+#include "../core/queue.h"
+#include "../core/process.h"
 
 //Turnaround Time = completion_time - arrival_time
 

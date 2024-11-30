@@ -1,9 +1,9 @@
 #ifndef CFS_H
 #define CFS_H
 
-#include "rbtree.h"
-#include "process.h"
-#include "queue.h"
+#include "../../utils//rbtree.h"
+#include "../../core/process.h"
+#include "../../core/queue.h"
 
 //======================================================
 // Scheduler Constants

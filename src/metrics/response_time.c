@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "queue.h"
-#include "process.h"
+#include "../core/queue.h"
+#include "../core/process.h"
 //Response Time = first_run_time - arrival_time
 
 double process_get_response_time(const process_t* process) {
