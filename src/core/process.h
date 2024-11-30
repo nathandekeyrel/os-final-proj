@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "../../utils/rbtree.h"
+#include "../utils/rbtree.h"
 
 //======================================================
 // State Enum
@@ -48,7 +48,7 @@ typedef struct process {
 //======================================================
 // Process Stuff
 //======================================================
-process_t *process_create(int pid, int priority, unsigned long burst_time, unsigned int io_frequency);
+process_t *process_create(int pid, int arrival_time, int priority, unsigned long burst_time, unsigned int io_frequency);
 void destroy_process(process_t *process);
 
 //======================================================

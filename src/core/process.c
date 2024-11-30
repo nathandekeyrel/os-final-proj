@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include "process.h"
 
+
 //======================================================
 // Process Stuff
 //======================================================
-process_t *process_create(int pid, int priority, unsigned long burst_time, unsigned int io_frequency) {
+process_t *process_create(int pid, int arrival_time, int priority, unsigned long burst_time, unsigned int io_frequency) {
     process_t *process = malloc(sizeof(process_t));
     if (!process) return NULL;
 
@@ -13,7 +14,7 @@ process_t *process_create(int pid, int priority, unsigned long burst_time, unsig
     process->priority = priority;
 
     // timing
-    process->arrival_time = 0;
+    process->arrival_time = arrival_time;
     process->first_run_time = 0;
     process->completion_time = 0;
     process->total_time = 0;
