@@ -7,26 +7,31 @@ pid,        arrival_time,       priority,       burst_time,     io_frequency
 2,                  5,            110,               5,             5       # IO-bound
 '''
 
-#FUNCTION TO CREAT WORKLOAD SIMULATIONS FROM ABOVE EXAMPLE :)
+
+# FUNCTION TO CREAT WORKLOAD SIMULATIONS FROM ABOVE EXAMPLE :)
 def create_workload(num):
-    num_tasks = 10  
+    num_tasks = 10
     results = []
+    current_time = 0
 
     for i in range(num_tasks):
-        arrival_time = i * 5  
-        priority = random.randint(-20, 20)  
-        burst_time = random.randint(5, 15)  
-        io_frequency = random.randint(0, 50) 
-        pidID = i+1
-        results.append([pidID, arrival_time, priority, burst_time, io_frequency])
+        pid = i + 1
+        arrival_time = current_time
+        current_time += random.randint(0, 10)
+        priority = random.randint(100, 139)
+        burst_time = random.randint(5, 50)
+        io_frequency = random.randint(0, 10)
+        results.append([pid, arrival_time, priority, burst_time, io_frequency])
 
     # WRITE RESULTS TO A AWESOME CSV
-    with open(f'task_schedule{num}.csv', mode='w', newline='') as file:
+    filepath = f'data/task_schedule{num}.csv'
+    with open(filepath, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['pid', 'arrival_time', 'priority', 'burst_time', 'io_frequency'])
 
         for result in results:
             writer.writerow(result)
+
 
 # Running the simulation
 if __name__ == "__main__":
