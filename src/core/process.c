@@ -4,7 +4,7 @@
 //======================================================
 // Process Stuff
 //======================================================
-process_t *process_create(int pid, int priority, unsigned long burst_time) {
+process_t *process_create(int pid, int priority, unsigned long burst_time, unsigned int io_frequency) {
     process_t *process = malloc(sizeof(process_t));
     if (!process) return NULL;
 
@@ -17,6 +17,10 @@ process_t *process_create(int pid, int priority, unsigned long burst_time) {
     process->first_run_time = 0;
     process->completion_time = 0;
     process->total_time = 0;
+    process->burst_time = burst_time;
+    process->io_frequency = io_frequency;
+
+
 
     // cfs
     process->vruntime = 0;

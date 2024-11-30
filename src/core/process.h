@@ -30,6 +30,8 @@ typedef struct process {
     unsigned long first_run_time;
     unsigned long completion_time;
     unsigned long total_time;
+    unsigned long burst_time;
+    unsigned int io_frequency;
 
     // cfs
     double vruntime;
@@ -46,7 +48,7 @@ typedef struct process {
 //======================================================
 // Process Stuff
 //======================================================
-process_t *process_create(int pid, int priority, unsigned long burst_time);
+process_t *process_create(int pid, int priority, unsigned long burst_time, unsigned int io_frequency);
 void destroy_process(process_t *process);
 
 //======================================================
