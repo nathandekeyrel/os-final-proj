@@ -5,7 +5,6 @@
 //======================================================
 // Queue Create/Destroy
 //======================================================
-
 queue_t *queue_create(void) {
     queue_t *queue = malloc(sizeof(queue_t));
     if (!queue) return NULL;
@@ -17,7 +16,7 @@ queue_t *queue_create(void) {
     return queue;
 }
 
-void queue_destroy(queue_t* queue) {
+void queue_destroy(queue_t *queue) {
     if (!queue) return;
 
     queue_clear(queue);
@@ -27,19 +26,18 @@ void queue_destroy(queue_t* queue) {
 //======================================================
 // Basic Queue Operations
 //======================================================
-
-bool queue_is_empty(const queue_t* queue) {
+bool queue_is_empty(const queue_t *queue) {
     return (queue == NULL || queue->size == 0);
 }
 
-int queue_size(const queue_t* queue) {
-    if(queue){
+int queue_size(const queue_t *queue) {
+    if (queue) {
         return queue->size;
     }
     return 0;
 }
 
-void queue_clear(queue_t* queue) {
+void queue_clear(queue_t *queue) {
     if (!queue) return;
     queue->head = NULL;
     queue->tail = NULL;
@@ -49,7 +47,7 @@ void queue_clear(queue_t* queue) {
 //======================================================
 // Process Management
 //======================================================
-bool queue_push(queue_t* queue, process_t* process) {
+bool queue_push(queue_t *queue, process_t *process) {
     if (!queue || !process) return false;
 
     process->next = NULL;
@@ -68,10 +66,10 @@ bool queue_push(queue_t* queue, process_t* process) {
     return true;
 }
 
-process_t* queue_pop(queue_t* queue) {
+process_t *queue_pop(queue_t *queue) {
     if (!queue || queue_is_empty(queue)) return NULL;
 
-    process_t* process = queue->head;
+    process_t *process = queue->head;
     queue->head = process->next;
 
     if (queue->head) {
@@ -88,7 +86,7 @@ process_t* queue_pop(queue_t* queue) {
 }
 
 
-process_t* queue_peek(const queue_t* queue) {
+process_t *queue_peek(const queue_t *queue) {
     if (!queue) return NULL;
     return queue->head;
 }
@@ -96,11 +94,10 @@ process_t* queue_peek(const queue_t* queue) {
 //======================================================
 // Queue Traversal
 //======================================================
-
-void queue_foreach(queue_t* queue, queue_process_fn fn, void* data) {
+void queue_foreach(queue_t *queue, queue_process_fn fn, void *data) {
     if (!queue || !fn) return;
 
-    process_t* current = queue->head;
+    process_t *current = queue->head;
     while (current != NULL) {
         fn(current, data);
         current = current->next;
