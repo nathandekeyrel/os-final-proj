@@ -9,14 +9,13 @@ include_directories(src/schedulers/completely-fair-scheduler)
 include_directories(src/utils)
 
 add_executable(os_final_proj
+        src/main.c
         src/core/process.c
         src/core/process.h
         src/core/queue.c
         src/core/queue.h
         src/metrics/metrics.h
-        src/metrics/response_time.c
-        src/metrics/turnaround_time.c
-        src/metrics/virtual_runtime_variance.c
+        src/metrics/metrics.c
         src/schedulers/completely-fair-scheduler/cfs.c
         src/schedulers/completely-fair-scheduler/cfs.h
         src/utils/rbtree.c

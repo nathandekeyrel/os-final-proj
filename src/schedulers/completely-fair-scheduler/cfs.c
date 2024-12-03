@@ -1,5 +1,7 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "cfs.h"
+
 
 //======================================================
 // Scheduler Stuff
@@ -206,3 +208,4 @@ bool cfs_should_preempt(process_t *current, process_t *next) {
 
     return (delta > MIN_GRANULARITY && next->vruntime < current->vruntime);
 }
+

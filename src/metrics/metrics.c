@@ -1,14 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "metrics.h"
 #include "../core/queue.h"
 #include "../core/process.h"
 
 
-//Variance = (1/N)SUM 1 to N(Xi - u)^2
-//N = num of processes
-//Xi is each vruntime value
-//u is the mean of the v runtime values
+double process_get_response_time(const process_t* process) {
+    // Assume that the process has `arrival_time` and `first_run_time` fields
+    if (process->first_run_time > 0) {
+        return process->first_run_timev - process->arrival_time;
+    }
+    return -1.0;
+}
+
+double process_get_turnaround_time(const process_t* process) {
+    if (process->completion_time > 0) {
+        return process->completion_time - process->arrival_time;
+    }
+    return -1.0;
+}
+
 
 double calculate_vruntime_variance(queue_t* queue) {
     if (queue == NULL || queue_is_empty(queue)) {
@@ -17,7 +29,7 @@ double calculate_vruntime_variance(queue_t* queue) {
 
     double total_vruntime = 0.0;
     int process_count = 0;
-    double sum = 0.0
+    double sum = 0.0;
 
     process_t* current = queue->head;
 
@@ -33,17 +45,15 @@ double calculate_vruntime_variance(queue_t* queue) {
     double u = total_vruntime/process_count;
 
     //DO EQUATION
-    process_t* current = queue->head;
+    process_t* current2 = queue->head;
 
-    while (current != NULL) {
-        double runtimeSUBmeanSQAURED = (current->vruntime - u) * (current->vruntime - u);
+    while (current2 != NULL) {
+        double runtimeSUBmeanSQAURED = (current2->vruntime - u) * (current2->vruntime - u);
         sum += runtimeSUBmeanSQAURED;
-        current = current->next;
+        current2 = current2->next;
     }
 
     //DIVIDE BY N THEN RETURN (N is just the total count)
     return sum/process_count;
 
 }
-
-

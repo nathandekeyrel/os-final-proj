@@ -58,4 +58,6 @@ unsigned int cfs_calc_timeslice(cfs_scheduler_t *scheduler, process_t *process);
 unsigned int cfs_calc_load_weight(int priority);
 bool cfs_should_preempt(process_t *current, process_t *next);
 
+
+
 #endif
