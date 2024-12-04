@@ -85,7 +85,6 @@ process_t *queue_pop(queue_t *queue) {
     return process;
 }
 
-
 process_t *queue_peek(const queue_t *queue) {
     if (!queue) return NULL;
     return queue->head;
