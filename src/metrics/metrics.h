@@ -7,6 +7,12 @@
 #include "../core/queue.h"
 #include "../core/process.h"
 
+typedef struct metrics {
+    double vruntime;
+    double rt;
+    double tt;
+} metrics_t;
+
 double calculate_vruntime_variance(queue_t *queue);
 
 double process_get_response_time(const process_t *process);

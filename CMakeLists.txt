@@ -26,7 +26,10 @@ set(SOURCE_FILES
         src/simulation/main.c
         /src/metrics/metrics.c
         /src/metrics/metrics.h
+        src/metrics/metrics.c
+        src/metrics/metrics.c
 )
 
 # Create executable
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILES}
+        src/metrics/metrics.c)
