@@ -1,7 +1,7 @@
 #include "rbtree.h"
 
 /*
- * this hole thing is based off:
+ * our implementation is based off of:
  *     https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
  *     https://github.com/torvalds/linux/blob/master/lib/rbtree.c
  * we opted for a much simpler approach for the rbtree, as we are doing a

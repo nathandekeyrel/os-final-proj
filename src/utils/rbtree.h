@@ -77,6 +77,7 @@ void rb_erase(struct rb_node *node, struct rb_root *root);
 // Tree Traversal
 //======================================================
 struct rb_node *rb_first(const struct rb_root *root);
+// for simulation purposes, we only use the rb_first traversal
 struct rb_node *rb_last(const struct rb_root *root);
 struct rb_node *rb_next(const struct rb_node *node);
 struct rb_node *rb_prev(const struct rb_node *node);
