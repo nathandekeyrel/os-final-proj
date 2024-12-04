@@ -24,6 +24,8 @@ set(SOURCE_FILES
         src/utils/rbtree.h
         src/simulation/sim.h
         src/simulation/main.c
+        /src/metrics/metrics.c
+        /src/metrics/metrics.h
 )
 
 # Create executable
