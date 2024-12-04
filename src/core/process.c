@@ -126,9 +126,3 @@ double process_get_turnaround_time(const process_t *process) {
     // total time in system
     return (double) (process->completion_time - process->arrival_time);
 }
-
-double process_get_waiting_time(const process_t *process) {
-    if (!process) return 0;
-    // total time - cpu time --> total time not running
-    return (double) ((process->completion_time - process->arrival_time) - process->total_time);
-}

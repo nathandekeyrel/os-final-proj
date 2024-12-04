@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "rbtree.h"
+#include "../utils/rbtree.h"
 
 //======================================================
 // State Enum
@@ -62,12 +62,5 @@ bool process_is_finished(const process_t *process);
 //======================================================
 void process_update_runtime(process_t *process, process_state_t new_state);
 void process_handle_io(process_t *process);
-
-//======================================================
-// Metric Helpers
-//======================================================
-double process_get_response_time(const process_t *process);
-double process_get_turnaround_time(const process_t *process);
-double process_get_waiting_time(const process_t *process);
 
 #endif

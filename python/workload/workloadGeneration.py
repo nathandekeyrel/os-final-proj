@@ -24,7 +24,7 @@ def create_workload(num):
         results.append([pid, arrival_time, priority, burst_time, io_frequency])
 
     # WRITE RESULTS TO A AWESOME CSV
-    filepath = f'data/task_schedule{num}.csv'
+    filepath = f'../../data/workloads/task_schedule{num}.csv'
     with open(filepath, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['pid', 'arrival_time', 'priority', 'burst_time', 'io_frequency'])
